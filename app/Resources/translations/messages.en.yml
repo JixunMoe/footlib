@@ -1,0 +1,15 @@
+# Player page
+player:
+  index:
+    add: "Add new player"
+    title: "Players"
+
+    name: "Name"
+    skill: "Skill Level"
+    noplayer: "No players in database. Consider adding one?"
+
+  new:
+    title: "Add New Player"
+    header: "Player Information"
+    add: "Add"
+    cancel: "cancel"

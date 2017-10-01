@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}player.index.title{% endtrans %}{% endblock %}
+
+{% block body %}
+    <h1>{% trans %}player.index.title{% endtrans %}</h1>
+
+    <div class="box">
+        {% if players|length == 0 %}
+            <p>{% trans %}player.index.noplayer{% endtrans %}</p>
+        {% else %}
+            <table class="table sortable is-cen">
+                <thead>
+                    <tr>
+                        <th>{% trans %}player.index.name{% endtrans %}</th>
+                        <th>{% trans %}player.index.skill{% endtrans %}</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for player in players %}
+                        <tr>
+                            <td>{{ player.name }}</td>
+                            <td>{{ player.skillLevel }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+
+        <div class="action-bar">
+            <a class="btn btn-primary" href="{{ path('player.new') }}">{% trans %}player.index.add{% endtrans %}</a>
+        </div>
+    </div>
+{% endblock %}

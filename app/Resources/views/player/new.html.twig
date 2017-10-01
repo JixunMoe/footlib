@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}player.new.title{% endtrans %}{% endblock %}
+
+{% block body %}
+    <h1 class="title is-1">{% trans %}player.new.title{% endtrans %}</h1>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">{% trans %}player.new.header{% endtrans %}</div>
+        <div class="panel-body">
+
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+
+                <div class="row">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">{% trans %}player.new.add{% endtrans %}</button>
+                        <a href="{{ path('player.list') }}" class="btn btn-link">{% trans %}player.new.cancel{% endtrans %}</a>
+                    </div>
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+
